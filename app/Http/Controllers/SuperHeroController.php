@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Repositories\Contracts\EntityRepositoryInterface;
 
 class SuperHeroController extends Controller
 {
@@ -19,6 +20,7 @@ class SuperHeroController extends Controller
      */
     public function Get($id)
     {
+        return view("country")->with('country', $this->repository->get($id));
     }
 
     /**
@@ -27,6 +29,8 @@ class SuperHeroController extends Controller
      */
     public function GetAll()
     {
+
+        return view("countries")->with('countries', $this->repository->getAll());
     }
 
     /**
@@ -36,5 +40,6 @@ class SuperHeroController extends Controller
 
     public function Ranking()
     {
+        return view("ranking")->with('countries', $this->repository->getAll());
     }
 }

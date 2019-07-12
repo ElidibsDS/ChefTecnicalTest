@@ -15,8 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/superheroes', 'SuperHeroController@GetAll');
+Route::get('/paises', 'SuperHeroController@GetAll');
 
-Route::get('/superheroe/{id}', 'SuperHeroController@Get');
+Route::get('/pais/{id}', 'SuperHeroController@Get');
 
 Route::get('/ranking', 'SuperHeroController@Ranking');
